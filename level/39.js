@@ -1,99 +1,114 @@
 oS.Init(
-	{
-		PName: [
-			oPeashooter,
-			oSunFlower,
-			oCherryBomb,
-			oWallNut,
-			oPotatoMine,
-			oSnowPea,
-			oChomper,
-			oRepeater,
-			oPuffShroom,
-			oSunShroom,
-			oFumeShroom,
-			oGraveBuster,
-			oHypnoShroom,
-			oScaredyShroom,
-			oIceShroom,
-			oDoomShroom,
-			oLilyPad,
-			oSquash,
-			oThreepeater,
-			oTangleKlep,
-			oJalapeno,
-			oSpikeweed,
-			oTorchwood,
-			oTallNut,
-			oOxygen,
-			ostar,
-			oTTS,
-			oGun,
-			oTenManNut,
-			oSeaAnemone,
-			oCactus,
-			oGatlingPea,
-			oTwinSunflower,
-		],
-		ZName: [oZombie, oConeheadZombie, oJackinTheBoxZombie, oXBZombie, oJY, oCXZombie, oJX],
-		PicArr: (function () {
-			return ["images/interface/backgroundLG.jpg"];
-		})(),
-		SunNum: 200,
-		LF: [0, 3, 3, 3, 3, 3, 3],
-		backgroundImage: "images/interface/backgroundLG.jpg",
-		CanSelectCard: 1,
-		DKind: 0,
-		LevelName: "Level 4-9",
-		LvlEName: 39,
-		LargeWaveFlag: {
-			10: $("imgFlag4"),
-			20: $("imgFlag3"),
-			30: $("imgFlag2"),
-			50: $("imgFlag1"),
-		},
-		StartGameMusic: "Lg_pk",
-	},
-	{
-		AZ: [
-			[oZombie, 4, 1],
-			[oConeheadZombie, 2, 1],
-			[oXBZombie, 2, 5, [5, 10, 15, 20, 25, 30, 45, 50]],
-			[oJackinTheBoxZombie, 1, 10, [10, 30, 45, 50]],
-			[oJY, 2, 7, [7, 10, 15, 20, 25, 30, 45, 50]],
-			[oCXZombie, 3, 20, [20, 25, 30, 45, 50]],
-			[oJX, 1, 1],
-		],
-		FlagNum: 50,
-		FlagToSumNum: {
-			a1: [3, 4, 5, 9, 9, 13, 15, 19, 20, 23, 25, 30, 50],
-			a2: [1, 2, 3, 4, 4, 5, 6, 7, 7, 8, 9, 10, 20, 30, 45],
-		},
-		FlagToMonitor: {
-			9: [ShowLargeWave, 0],
-			19: [ShowLargeWave, 0],
-			29: [ShowLargeWave, 0],
-			49: [ShowFinalWave, 0],
-		},
-		FlagToEnd() {
-			NewImg("imgSF", "images/interface/ZombieNoteSmall.png", "left:667px;top:220px", EDAll, {
-				onclick() {
-					PlaySound2("winmusic");
-					SetHidden($("PointerUD"));
-					LoadMenu(
-						"note",
-						"images/interface/NoteBG_DragonPalace.png",
-						{
-							overlayImage: "images/interface/Zombiefinalnote.png",
-							callback: () => {
-								SelectModal(40);
-							},
-						},
-						this
-					);
-				},
-			});
-			NewImg("PointerUD", "images/interface/PointerDown.gif", "top:185px;left:676px", EDAll);
-		},
-	}
-);
+{
+    PName: [
+        oPeashooter,
+        oSunFlower,
+        oCherryBomb,
+        oWallNut,
+        oPotatoMine,
+        oSnowPea,
+        oChomper,
+        oRepeater,
+        oPuffShroom,
+        oFumeShroom,
+        oHypnoShroom,
+        oScaredyShroom,
+        oIceShroom,
+        oDoomShroom,
+        oLilyPad,
+        oSquash,
+        oThreepeater,
+        oTangleKlep,
+        oJalapeno,
+        oSpikeweed,
+        oTorchwood,
+        oTallNut,
+        oSeaShroom,
+        oPlantern,
+        oCactus,
+    ],
+
+    ZName: [
+        oZombie,
+        oZombie2,
+        oZombie3,
+        oConeheadZombie,
+        oBucketheadZombie,
+        oDuckyTubeZombie1,
+        oDuckyTubeZombie2,
+        oDuckyTubeZombie3,
+        oJackinTheBoxZombie,
+        oScreenDoorZombie,
+        oFootballZombie,
+        oZomboni,
+        oBalloonZombie,
+    ],
+
+    PicArr: [
+        "images/interface/background4.jpg",
+        "images/interface/Dave.gif",
+        "images/interface/Dave3.gif"
+    ],
+
+    backgroundImage: "images/interface/background4.jpg",
+
+    HaveFog: 1,
+    LF: [0,1,1,2,2,1,1],
+    Coord: 2,
+
+    CanSelectCard: 1,
+    DKind: 0,
+    SunNum: 50,
+
+    LevelName: "Fog 9",
+    LvlEName: 39,
+
+    AudioArr: ["crazydaveshort1","crazydavelong1","crazydavelong2","crazydavelong3"],
+
+    LargeWaveFlag: { 10: $("imgFlag1") },
+
+    UserDefinedFlagFunc(a){
+        oP.FlagNum === oP.FlagZombies &&
+        oP.SetTimeoutWaterZombie(5,9,4,[oDuckyTubeZombie1,oDuckyTubeZombie2,oDuckyTubeZombie3]);
+    },
+
+    StartGameMusic: "RigorMormist",
+},
+
+{
+    AZ: [
+        [oZombie,3,1],
+        [oZombie2,2,1],
+        [oZombie3,2,1],
+        [oConeheadZombie,2,1],
+        [oBucketheadZombie,1,1],
+        [oDuckyTubeZombie1,1,6,[6]],
+        [oDuckyTubeZombie2,1,7],
+        [oDuckyTubeZombie3,1,8],
+        [oBalloonZombie,1,10,[10]]
+    ],
+
+    FlagNum: 10,
+
+    FlagToSumNum: { 
+        a1:[3,5,9], 
+        a2:[1,2,3,15] 
+    },
+
+    FlagToMonitor: { 
+        9:[ShowFinalWave,0] 
+    },
+
+    FlagToEnd: function(){
+        NewImg("imgSF","images/interface/trophy.png",
+            "left:43.5%;top:220px",EDAll,{
+                onclick:function(){
+                    SelectModal(0);
+                    PlaySound2("winmusic");
+                }
+            }
+        );
+        NewImg("PointerUD","images/interface/PointerDown.gif",
+            "top:185px;left:51%",EDAll);
+    }
+});

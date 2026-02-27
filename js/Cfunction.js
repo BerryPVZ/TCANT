@@ -4026,19 +4026,9 @@ const allPlantsStringArray = [
 	"oTallNut",
 	"oCactus",
 	"oPlantern",
-	"oSplitPea",
 	"oStarfruit",
-	"oPumpkinHead",
-	"oFlowerPot",
-	"oCoffeeBean",
-	"oGarlic",
 	"oSeaShroom",
-	"oOxygen",
-	"ostar",
-	"oTTS",
-	"oGun",
-	"oSeaAnemone",
-	"oBalloon",
+	"oComingSoon",
 ];
 
 const allPlantsArray = () => {

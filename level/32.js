@@ -1,76 +1,155 @@
 oS.Init(
-	{
-		PName: [
-			oPeashooter,
-			oSunFlower,
-			oCherryBomb,
-			oWallNut,
-			oPotatoMine,
-			oSnowPea,
-			oChomper,
-			oRepeater,
-			oPuffShroom,
-			oSunShroom,
-			oFumeShroom,
-			oGraveBuster,
-			oHypnoShroom,
-			oScaredyShroom,
-			oIceShroom,
-			oDoomShroom,
-			oLilyPad,
-			oSquash,
-			oThreepeater,
-			oTangleKlep,
-			oJalapeno,
-			oSpikeweed,
-			oTorchwood,
-			oTallNut,
-			oOxygen,
-			ostar,
-		],
-		ZName: [oZombie, oZombie2, oConeheadZombie, oCXZombie, oBucketheadZombie],
-		PicArr: (function () {
-			return ["images/interface/backgroundLG.jpg"];
-		})(),
-		SunNum: 100,
-		LF: [0, 3, 3, 3, 3, 3, 3],
-		backgroundImage: "images/interface/backgroundLG.jpg",
-		CanSelectCard: 1,
-		DKind: 0,
-		LevelName: "Level 4-2",
-		LvlEName: 32,
-		LargeWaveFlag: {
-			10: $("imgFlag3"),
-			20: $("imgFlag2"),
-			30: $("imgFlag1"),
-		},
-		StartGameMusic: "Lg_pk",
-	},
-	{
-		AZ: [
-			[oZombie, 4, 1],
-			[oZombie2, 1, 1],
-			[oConeheadZombie, 2, 12],
-			[oCXZombie, 1, 5],
-			[oBucketheadZombie, 1, 15],
-		],
-		FlagNum: 30,
-		FlagToSumNum: {
-			a1: [3, 3, 9, 10, 13, 15],
-			a2: [1, 2, 3, 3, 4, 5, 6, 15],
-		},
-		FlagToMonitor: {
-			9: [ShowLargeWave, 0],
-			19: [ShowLargeWave, 0],
-			29: [ShowFinalWave, 0],
-		},
-		FlagToEnd() {
-			NewImg("imgSF", "images/Card/Plants/TTS.png", "left:627px;top:325px;clip:rect(auto,auto,60px,auto)", EDAll, {
-				onclick() {
-					GetNewCard(this, oTTS, 33);
-				},
-			});
-			NewImg("PointerUD", "images/interface/PointerDown.gif", "top:290px;left:636px", EDAll);
-		},
-	}
-);
+{
+    PName: [
+        oPeashooter,
+        oSunFlower,
+        oCherryBomb,
+        oWallNut,
+        oPotatoMine,
+        oSnowPea,
+        oChomper,
+        oRepeater,
+        oPuffShroom,
+        oFumeShroom,
+        oHypnoShroom,
+        oScaredyShroom,
+        oIceShroom,
+        oDoomShroom,
+        oLilyPad,
+        oSquash,
+        oThreepeater,
+        oTangleKlep,
+        oJalapeno,
+        oSpikeweed,
+        oTorchwood,
+        oTallNut,
+        oSeaShroom,
+        oPlantern,
+    ],
+
+    ZName: [
+        oZombie,
+        oZombie2,
+        oZombie3,
+        oConeheadZombie,
+        oBucketheadZombie,
+        oDuckyTubeZombie1,
+        oDuckyTubeZombie2,
+        oDuckyTubeZombie3,
+        oJackinTheBoxZombie,
+        oNewspaperZombie,
+        oScreenDoorZombie,
+        oFootballZombie,
+        oZomboni,
+    ],
+
+    PicArr: [
+        "images/interface/background4.jpg",
+        "images/interface/Dave.gif",
+        "images/interface/Dave3.gif"
+    ],
+
+    backgroundImage: "images/interface/background4.jpg",
+
+    HaveFog: 1,
+    LF: [0,1,1,2,2,1,1],
+    Coord: 2,
+
+    CanSelectCard: 1,
+    DKind: 0,
+    SunNum: 50,
+
+    LevelName: "Fog 2",
+    LvlEName: 32,
+
+    AudioArr: ["crazydaveshort1","crazydavelong1","crazydavelong2","crazydavelong3"],
+
+    LargeWaveFlag: { 10: $("imgFlag1") },
+
+    UserDefinedFlagFunc(a){
+        oP.FlagNum === oP.FlagZombies &&
+        oP.SetTimeoutWaterZombie(5,9,4,[oDuckyTubeZombie1,oDuckyTubeZombie2,oDuckyTubeZombie3]);
+    },
+
+    StartGameMusic: "RigorMormist",
+
+    LoadAccess: function(a){
+        NewImg("dDave","images/interface/Dave.gif","left:0;top:81px",EDAll);
+        NewEle("DivTeach","div",0,0,EDAll);
+
+        (function(d){
+            var b = arguments.callee;
+            var c = $("DivTeach");
+
+            switch(d){
+                case 0:
+                    PlaySound2("crazydaveshort1");
+                    $("dDave").src = "images/interface/Dave3.gif";
+                    oSym.addTask(1,function(){
+                        $("dDave").src = "images/interface/Dave.gif";
+                        c.onclick=function(){oSym.addTask(10,b,[1]);};
+                    },[]);
+                    innerText(c,"Look at this cute star I found!");
+                    break;
+
+                case 1:
+                    PlaySound2("crazydavelong"+Math.floor(1+Math.random()*3));
+                    c.onclick=null;
+                    $("dDave").src="images/interface/Dave3.gif";
+                    oSym.addTask(2,function(){
+                        $("dDave").src="images/interface/Dave.gif";
+                        c.onclick=function(){oSym.addTask(10,b,[2]);};
+                    },[]);
+                    innerText(c,"Isnt he adorable? I want to keep him forever!");
+                    break;
+
+                case 2:
+                    $("dDave").src="images/interface/Dave2.gif";
+                    ClearChild($("DivTeach"));
+                    oSym.addTask(5,function(){
+                        ClearChild($("dDave"));
+                        a(0);
+                    },[]);
+            }
+        })(0);
+    }
+
+},
+
+{
+    AZ: [
+        [oZombie,3,1],
+        [oZombie2,2,1],
+        [oZombie3,2,1],
+        [oConeheadZombie,2,1],
+        [oBucketheadZombie,1,1],
+        [oDuckyTubeZombie1,1,6,[6]],
+        [oDuckyTubeZombie2,1,7],
+        [oDuckyTubeZombie3,1,8],
+        [oNewspaperZombie,1,10,[10]]
+    ],
+
+    FlagNum: 10,
+
+    FlagToSumNum: { 
+        a1:[3,5,9], 
+        a2:[1,2,3,15] 
+    },
+
+    FlagToMonitor: { 
+        9:[ShowFinalWave,0] 
+    },
+
+    FlagToEnd: function(){
+        NewImg("imgSF","images/interface/trophy.png",
+            "left:43.5%;top:220px",EDAll,{
+                onclick:function(){
+                    SelectModal(0);
+                    PlaySound2("winmusic");
+                }
+            }
+        );
+        NewImg("PointerUD","images/interface/PointerDown.gif",
+            "top:185px;left:51%",EDAll);
+    }
+});

@@ -36,7 +36,7 @@ oS.Init(
 							},
 							[]
 						);
-						innerText(c, "Neighbors, we managed to fight off some zombies after all the hard work! congratulations");
+						innerText(c, "Hey! we managed to fight off some zombies after all the hard work! congratulations");
 						break;
 					case 1:
 						PlaySound2("crazydavelong" + Math.floor(1 + Math.random() * 3));
@@ -68,7 +68,7 @@ oS.Init(
 							},
 							[]
 						);
-						innerText(c, "But first, you must clean your lawn.");
+						innerText(c, "You may ask who I am? First, you must clean your lawn.");
 						break;
 					case 3:
 						PlaySound2("crazydavelong" + Math.floor(1 + Math.random() * 3));

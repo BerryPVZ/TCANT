@@ -1,6 +1,6 @@
 export var oChomper = InheritO(CPlants, {
 	EName: "oChomper",
-	CName: "Chomper",
+	CName: "PAC MAN",
 	width: 130,
 	height: 114,
 	beAttackedPointR: 70,
@@ -16,7 +16,7 @@ export var oChomper = InheritO(CPlants, {
 	],
 	Tooltip: "Devours a zombie whole, but is vulnerable while chewing",
 	Produce:
-		'<font color="#28325A">Chompers can devour a zombie whole, but they are vulnerable while chewing.</font><p>Damage: <font color="#CC241D">massive</font><br>Range: <font color="#CC241D">very short</font><br>Special: <font color="#CC241D">long delay between chomps</font></p>Chomper almost got a gig doing stunts for The Little Shop of Horrors but it fell through when his agent demanded too much on the front end. Chomper\'s not resentful, though. He says it\'s just part of the business.',
+		'<font color="#28325A">PAC MEN can devour a zombie whole, but they are vulnerable while chewing.</font><p>Damage: <font color="#CC241D">massive</font><br>Range: <font color="#CC241D">very short</font><br>Special: <font color="#CC241D">long delay between chomps</font></p>PAC MAN almost got a gig doing stunts for The Little Shop of Horrors but it fell through when his agent demanded too much on the front end. PAC MAN\'s not resentful, though. He says it\'s just part of the business.',
 	GetDX() {
 		return -40;
 	},

@@ -100,6 +100,7 @@ import { oTwinSunflower } from "./plants/oTwinSunflower.js";
 import { oWallNut } from "./plants/oWallNut.js";
 import { oBlover } from "./plants/oBlover.js";
 import { oFlamesMushroom } from "./plants/oFlamesMushroom.js";
+import { oComingSoon } from "./plants/oComingSoon.js";
 import { ostar } from "./plants/ostar.js";
 import { ostar1 } from "./plants/ostar1.js";
 
@@ -143,6 +144,7 @@ const plants = {
 	oLing: oLing,
 	oLotusRoot: oLotusRoot,
 	oMagnetShroom: oMagnetShroom,
+	oComingSoon: oComingSoon,
 	oMagneticmuShroom: oMagneticmuShroom,
 	oNutBowling: oNutBowling,
 	oOG: oOG,
