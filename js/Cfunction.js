@@ -4014,7 +4014,6 @@ const allPlantsStringArray = [
 	"oTallNut",
 	"oCactus",
 	"oPlantern",
-	"oStarfruit",
 	"oSeaShroom",
 	"oComingSoon",
 ];
