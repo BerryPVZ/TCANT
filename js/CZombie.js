@@ -7172,7 +7172,7 @@ oCBucketheadZombie = InheritO(
 		};
 		return InheritO(oZomboni, {
 			EName: "oLGBOSS",
-			CName: "Dragon King Zombie",
+			CName: "Zombot 2.0",
 			HP: 1000,
 			width: 464,
 			height: 377,
@@ -7180,7 +7180,7 @@ oCBucketheadZombie = InheritO(
 			beAttackedPointR: 300,
 			BookHandPosition: "0% 39%",
 			Produce:
-				'<font color="#28325A">Dr. Zomboss\'s latest enormous<br>creation: zombot 2.0!</font><p>Toughness: <font color="#CC241D">extremely high</font></p>Dr. Zomboss’s ambitions are not only<br>limited to land; he also strives to create<br>massive machinery.<br>Hence, the latest robot, the<br>zombot 2.0 mech, was born. He used his<br>brain too much when creating this robot,<br>and now he plans to have a restock.',
+				'<font color="#28325A">Dr. Zomboss\'s latest enormous<br>creation: zombot 2.0!</font><p>Toughness: <font color="#CC241D">extremely high</font></p>Dr. Zomboss is definitely a sore loser.<br>Hence, the latest robot, the<br>zombot 2.0 mech, was born. He used his<br>brain too much when creating this robot,<br>and now he plans to have a restock.',
 			PicArr: (function () {
 				var b = "images/Zombies/LGBOSS/";
 				return [
